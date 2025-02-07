@@ -1,0 +1,120 @@
+:root {
+    --bg-color: black;
+    --text-color: white;
+    --highlight-color: yellow;
+    --font-family: 'Arial', sans-serif;
+    --spacing-unit: 15px;
+    --container-width: 1200px;
+    --image-size: 240px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: var(--spacing-unit) 0;
+    color: var(--highlight-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--highlight-color);
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: var(--text-color);
+    margin: 20px auto;
+    width: 90%;
+}
+
+.group-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+}
+
+.group {
+    text-align: center;
+    margin: var(--spacing-unit);
+    width: calc(25% - 2 * var(--spacing-unit));
+}
+
+.group img {
+    width: var(--image-size);
+    height: var(--image-size);
+    border-radius: 50%;
+    object-fit: cover;
+    margin: var(--spacing-unit);
+}
+
+.group h2 {
+    font-size: 1.4rem;
+    margin-top: var(--spacing-unit);
+}
+
+.group h2 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.group h2 a:hover {
+    color: var(--highlight-color);
+}
+
+.group-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-unit);
+    margin-top: var(--spacing-unit);
+}
+
+.group-buttons a {
+    padding: 8px 16px;
+    border: 2px solid var(--highlight-color);
+    border-radius: 30px;
+    color: var(--highlight-color);
+    background-color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.group-buttons a:hover {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .group {
+        width: calc(50% - 2 * var(--spacing-unit));
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .group {
+        width: 100%;
+    }
+}

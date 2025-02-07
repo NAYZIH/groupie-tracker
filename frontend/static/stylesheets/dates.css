@@ -1,0 +1,139 @@
+:root {
+    --bg-color: black;
+    --text-color: white;
+    --highlight-color: yellow;
+    --font-family: 'Arial', sans-serif;
+    --spacing-unit: 15px;
+    --container-width: 1200px;
+    --name-bar-color: var(--highlight-color);
+    --name-bar-height: 2px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: var(--spacing-unit) 0;
+    color: var(--highlight-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--highlight-color);
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: var(--text-color);
+    margin: 20px auto;
+    width: 90%;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+}
+
+.location-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: var(--spacing-unit) 0;
+}
+
+.date-left {
+    flex: 1;
+    padding: var(--spacing-unit);
+    max-width: 500px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.date {
+    text-align: left;
+    margin-bottom: var(--spacing-unit);
+}
+
+.date h2 {
+    font-size: 1.8rem;
+    color: var(--highlight-color);
+    margin-bottom: 10px;
+}
+
+.name-bar {
+    border: 0;
+    height: var(--name-bar-height);
+    background-color: var(--name-bar-color);
+    margin-top: 0;
+    margin-bottom: var(--spacing-unit);
+    width: 100%;
+}
+
+.date p {
+    font-size: 1rem;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.date ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+.date li {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.error {
+    color: var(--highlight-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-unit) 0;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .date-left {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}

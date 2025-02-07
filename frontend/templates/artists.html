@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie Tracker</title>
+    <link rel="stylesheet" href="/static/stylesheets/artists.css">
+</head>
+<body>
+    <a href="/"><h1>GROUPIE-TRACKER</h1></a>
+    <hr>
+
+    <div class="group-container">
+        {{range .}}
+            <div class="group">
+                <a href="/info/{{.ID}}">
+                    <img src="{{.Image}}" alt="{{.Name}}">
+                </a>
+                <div class="group-buttons">
+                    <a href="/locations/{{.ID}}">Locations</a>
+                    <a href="/dates/{{.ID}}">Dates</a>
+                </div>
+                <h2><a href="/info/{{.ID}}">{{.Name}}</a></h2>
+            </div>
+        {{end}}
+    </div>
+</body>
+</html>

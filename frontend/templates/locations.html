@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details de la location</title>
+    <link rel="stylesheet" href="/static/stylesheets/locations.css">
+</head>
+<body>
+    <a href="/"><h1>GROUPIE-TRACKER</h1></a>
+    <hr>
+
+    <div class="content">
+        {{if .}}
+            <div class="location-container">
+                <div class="location">
+                    <p><strong>Locations:</strong></p>
+                    <ul>
+                        {{range .Locations}}
+                            <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                </div>
+            </div>
+        {{end}}
+    </div>
+
+    <footer>
+        <hr>
+    </footer>
+</body>
+</html>

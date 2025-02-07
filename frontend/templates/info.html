@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Artist.Name}}</title>
+    <link rel="stylesheet" href="/static/stylesheets/info.css">
+</head>
+<body>
+    <a href="/"><h1>GROUPIE-TRACKER</h1></a>
+    <hr>
+
+    <div class="content">
+        <div class="info-left">
+            <div class="group-info-name">
+                <h2>{{.Artist.Name}}</h2>
+                <hr class="name-bar">
+            </div>
+            <div class="members">
+                <ul>
+                    {{range .Artist.Members}}
+                        <li>{{.}}</li>
+                    {{end}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="artist-container">
+            <img src="{{.Artist.Image}}" alt="{{.Artist.Name}}">
+            <div class="dates">
+                <p><span style="color: var(--highlight-color);">Année de création:</span> <span style="font-weight: bold;">{{.Artist.CreationDate}}</span></p>
+                <p><span style="color: var(--highlight-color);">Premier album:</span> <span style="font-weight: bold;">{{.Artist.FirstAlbum}}</span></p>
+            </div>
+        </div>
+
+        <div class="info-right">
+            <div class="relations">
+                <p class="section-title">Concerts:</p>
+                {{range $location, $dates := .Relation.DatesLocations}}
+                    <p style="color: var(--highlight-color);">{{ $location }}</p>
+                    <ul>
+                        <li style="font-weight: bold;">{{ range $index, $date := $dates }}{{if $index}}, {{end}}{{.}}{{end}}</li>
+                    </ul>
+                {{end}}
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <hr>
+        <div class="top-tracks">
+            <p style="color: var(--highlight-color);">Top Tracks:</p>
+            <ul>
+                {{range .TopTracks}}
+                    <li class="track-item">
+                        <p>{{.Title}}</p>
+                        <audio controls>
+                            <source src="{{.Preview}}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </li>
+                {{end}}
+            </ul>
+        </div>
+        <hr>
+    </footer>
+</body>
+</html>

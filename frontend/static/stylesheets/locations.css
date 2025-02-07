@@ -1,0 +1,152 @@
+:root {
+    --bg-color: black;
+    --text-color: white;
+    --highlight-color: yellow;
+    --font-family: 'Arial', sans-serif;
+    --spacing-unit: 15px;
+    --container-width: 1200px;
+    --name-bar-color: var(--highlight-color);
+    --name-bar-height: 2px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: var(--spacing-unit) 0;
+    color: var(--highlight-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--highlight-color);
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: var(--text-color);
+    margin: 20px auto;
+    width: 90%;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--spacing-unit);
+}
+
+.location-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: var(--spacing-unit) 0;
+}
+
+.location {
+    padding: 20px;
+    text-align: right;
+    margin: var(--spacing-unit) 0;
+}
+
+.location h2 {
+    color: var(--highlight-color);
+    margin-bottom: var(--spacing-unit);
+}
+
+.name-bar {
+    border: 0;
+    height: var(--name-bar-height);
+    background-color: var(--name-bar-color);
+    margin-top: 0;
+    margin-bottom: var(--spacing-unit);
+    width: 100%;
+}
+
+.location p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: var(--spacing-unit);
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.group-info {
+    text-align: right;
+    margin-bottom: var(--spacing-unit);
+}
+
+.group-info-name h2 {
+    color: var(--highlight-color);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-unit);
+}
+
+.group-image img {
+    width: var(--image-size);
+    height: var(--image-size);
+    border-radius: 50%;
+    margin-top: var(--spacing-unit);
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .location {
+        width: 90%;
+        padding: var(--spacing-unit);
+    }
+
+    .group-image img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .location {
+        padding: var(--spacing-unit) 10px;
+    }
+
+    .group-image img {
+        width: 120px;
+        height: 120px;
+    }
+}

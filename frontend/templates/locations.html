@@ -12,9 +12,9 @@
 
     <div class="content">
         {{if .}}
+        <img src="{{.Image}}" alt="{{.Name}}">
             <div class="location-container">
                 <div class="group-info">
-                    <img src="{{.Image}}" alt="{{.Name}}">
                     <h2><a href="/info/{{.ID}}">{{.Name}}</a></h2>
                     <ul>
                         {{range .Locations}}

@@ -51,7 +51,7 @@ hr {
     padding: var(--spacing-unit);
 }
 
-.date-container {
+.dates-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,50 +59,31 @@ hr {
     margin: var(--spacing-unit) 0;
 }
 
-.date-left {
-    flex: 1;
-    padding: var(--spacing-unit);
-    max-width: 500px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.date {
-    text-align: left;
+.group-info {
+    text-align: center;
     margin-bottom: var(--spacing-unit);
 }
 
-.date h2 {
+.group-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 0%;
+    margin-bottom: var(--spacing-unit);
+}
+
+.group-info h2 {
     font-size: 1.8rem;
     color: var(--highlight-color);
     margin-bottom: 10px;
 }
 
-.name-bar {
-    border: 0;
-    height: var(--name-bar-height);
-    background-color: var(--name-bar-color);
-    margin-top: 0;
-    margin-bottom: var(--spacing-unit);
-    width: 100%;
-}
-
-.date p {
-    font-size: 1rem;
-    margin: 10px 0;
-    text-align: left;
-}
-
-.date ul {
+.group-info ul {
     list-style-type: none;
     padding-left: 0;
-    text-align: left;
+    text-align: center;
 }
 
-.date li {
+.group-info li {
     margin: 5px 0;
     font-size: 1rem;
     color: var(--text-color);
@@ -126,7 +107,7 @@ footer {
         align-items: center;
     }
 
-    .date-left {
+    .group-info {
         max-width: 100%;
         text-align: center;
     }

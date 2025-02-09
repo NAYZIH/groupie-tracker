@@ -24,7 +24,6 @@ func GetDatesByID(id int) (structures.Dates, error) {
 		return structures.Dates{}, err
 	}
 
-	// Fetch artist information
 	artist, err := GetArtistByID(id)
 	if err != nil {
 		return structures.Dates{}, err
@@ -32,6 +31,10 @@ func GetDatesByID(id int) (structures.Dates, error) {
 
 	dates.Image = artist.Image
 	dates.Name = artist.Name
+
+	for i, date := range dates.Dates {
+		dates.Dates[i] = strings.ReplaceAll(strings.TrimPrefix(date, "*"), "-", ".")
+	}
 
 	return dates, nil
 }
@@ -67,6 +70,5 @@ func DatesHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Passer la location au template
 	tmpl.Execute(w, dates)
 }

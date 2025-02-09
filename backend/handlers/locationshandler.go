@@ -24,7 +24,6 @@ func GetLocationByID(id int) (structures.Location, error) {
 		return structures.Location{}, err
 	}
 
-	// Fetch artist information
 	artist, err := GetArtistByID(id)
 	if err != nil {
 		return structures.Location{}, err
@@ -59,6 +58,11 @@ func LocationsHandler(w http.ResponseWriter, r *http.Request) {
 	if location.ID == 0 {
 		http.Error(w, "No location found for this ID.", http.StatusNotFound)
 		return
+	}
+
+	for i, loc := range location.Locations {
+		loc = strings.ReplaceAll(strings.ReplaceAll(loc, "-", ", "), "_", " ")
+		location.Locations[i] = strings.Title(loc)
 	}
 
 	tmpl, err := template.ParseFiles("../frontend/templates/locations.html")

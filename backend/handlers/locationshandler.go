@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"groupie-tracker/backend/structures"
-	"html/template"
 	"net/http"
 	"strconv"
 	"strings"
+	"text/template"
 )
 
 func GetLocationByID(id int) (structures.Location, error) {
@@ -23,6 +23,15 @@ func GetLocationByID(id int) (structures.Location, error) {
 	if err := json.NewDecoder(response.Body).Decode(&location); err != nil {
 		return structures.Location{}, err
 	}
+
+	// Fetch artist information
+	artist, err := GetArtistByID(id)
+	if err != nil {
+		return structures.Location{}, err
+	}
+
+	location.Image = artist.Image
+	location.Name = artist.Name
 
 	return location, nil
 }

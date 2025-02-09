@@ -59,64 +59,46 @@ hr {
     margin: var(--spacing-unit) 0;
 }
 
-.location {
-    padding: 20px;
-    text-align: right;
-    margin: var(--spacing-unit) 0;
+.group-info {
+    text-align: center;
+    margin-bottom: var(--spacing-unit);
 }
 
-.location h2 {
+.group-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 0%;
+    margin-bottom: var(--spacing-unit);
+}
+
+.group-info h2 {
+    font-size: 1.8rem;
     color: var(--highlight-color);
-    margin-bottom: var(--spacing-unit);
+    margin-bottom: 10px;
 }
 
-.name-bar {
-    border: 0;
-    height: var(--name-bar-height);
-    background-color: var(--name-bar-color);
-    margin-top: 0;
-    margin-bottom: var(--spacing-unit);
-    width: 100%;
+.group-info ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
 }
 
-.location p {
+.group-info li {
+    margin: 5px 0;
     font-size: 1rem;
-    margin: 10px 0;
+    color: var(--text-color);
 }
 
 .error {
-    color: red;
+    color: var(--highlight-color);
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
-    margin-top: var(--spacing-unit);
-    font-size: 1.2rem;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-li {
-    margin: 5px 0;
-}
-
-.group-info {
-    text-align: right;
-    margin-bottom: var(--spacing-unit);
-}
-
-.group-info-name h2 {
-    color: var(--highlight-color);
-    font-size: 2rem;
-    margin-bottom: var(--spacing-unit);
-}
-
-.group-image img {
-    width: var(--image-size);
-    height: var(--image-size);
-    border-radius: 50%;
-    margin-top: var(--spacing-unit);
+footer {
+    text-align: center;
+    padding: var(--spacing-unit) 0;
 }
 
 @media (max-width: 768px) {
@@ -125,28 +107,14 @@ li {
         align-items: center;
     }
 
-    .location {
-        width: 90%;
-        padding: var(--spacing-unit);
-    }
-
-    .group-image img {
-        width: 150px;
-        height: 150px;
+    .group-info {
+        max-width: 100%;
+        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5rem;
-    }
-
-    .location {
-        padding: var(--spacing-unit) 10px;
-    }
-
-    .group-image img {
-        width: 120px;
-        height: 120px;
     }
 }

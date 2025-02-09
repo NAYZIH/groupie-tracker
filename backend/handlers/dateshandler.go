@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"groupie-tracker/backend/structures"
-	"html/template"
 	"net/http"
 	"strconv"
 	"strings"
+	"text/template"
 )
 
 func GetDatesByID(id int) (structures.Dates, error) {
@@ -23,6 +23,15 @@ func GetDatesByID(id int) (structures.Dates, error) {
 	if err := json.NewDecoder(response.Body).Decode(&dates); err != nil {
 		return structures.Dates{}, err
 	}
+
+	// Fetch artist information
+	artist, err := GetArtistByID(id)
+	if err != nil {
+		return structures.Dates{}, err
+	}
+
+	dates.Image = artist.Image
+	dates.Name = artist.Name
 
 	return dates, nil
 }

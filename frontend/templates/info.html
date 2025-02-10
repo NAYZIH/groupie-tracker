@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{.Artist.Name}}</title>
     <link rel="stylesheet" href="/static/stylesheets/info.css">
+    <script src="/static/scripts/info.js" defer></script>
 </head>
 <body>
     <a href="/"><h1>GROUPIE-TRACKER</h1></a>
     <hr>
+    
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Rechercher un artiste, membre, lieu ou dates" onkeyup="searchSuggestions()">
+        <ul id="suggestions-list"></ul>
+    </div>
 
     <div class="content">
         <div class="info-left">

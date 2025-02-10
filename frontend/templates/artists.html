@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groupie Tracker</title>
     <link rel="stylesheet" href="/static/stylesheets/artists.css">
+    <script src="/static/scripts/artists.js" defer></script>
 </head>
 <body>
     <a href="/"><h1>GROUPIE-TRACKER</h1></a>
     <hr>
 
     <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Rechercher un artiste, membre..." onkeyup="searchSuggestions()">
+        <input type="text" id="search-bar" placeholder="Rechercher un artiste, membre, lieu ou dates" onkeyup="searchSuggestions()">
         <ul id="suggestions-list"></ul>
     </div>
 
@@ -29,28 +30,5 @@
             </div>
         {{end}}
     </div>
-    <script>
-        function searchSuggestions() {
-            const query = document.getElementById("search-bar").value;
-            const suggestionsList = document.getElementById("suggestions-list");
-
-            if (query.length === 0) {
-                suggestionsList.innerHTML = '';
-                return;
-            }
-
-            fetch(`/search?q=${query}`)
-                .then(response => response.json())
-                .then(data => {
-                    suggestionsList.innerHTML = '';
-                    data.forEach(suggestion => {
-                        const li = document.createElement("li");
-                        li.innerHTML = `<a href="${suggestion.url}">${suggestion.label} (${suggestion.type})</a>`;
-                        suggestionsList.appendChild(li);
-                    });
-                })
-                .catch(error => console.error('Error fetching suggestions:', error));
-        }
-    </script>
 </body>
 </html>

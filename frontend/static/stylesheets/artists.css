@@ -54,6 +54,11 @@ hr {
     text-align: center;
     margin: var(--spacing-unit);
     width: calc(25% - 2 * var(--spacing-unit));
+    transition: transform 0.3s ease;
+}
+
+.group:hover {
+    transform: scale(1.05);
 }
 
 .group img {
@@ -103,7 +108,6 @@ hr {
     transform: scale(1.05);
 }
 
-/* Barre de recherche */
 .search-container {
     margin: 20px;
     display: flex;
@@ -160,5 +164,13 @@ hr {
 
     .group {
         width: 100%;
+    }
+
+    #search-bar {
+        width: 80%;
+    }
+
+    #suggestions-list {
+        width: 80%;
     }
 }

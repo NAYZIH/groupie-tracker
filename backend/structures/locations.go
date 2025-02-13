@@ -7,3 +7,8 @@ type Location struct {
 	Image     string   `json:"image"`
 	Name      string   `json:"name"`
 }
+
+type GeolocationResponse struct {
+	Lon float64 `json:"lon"`
+	Lat float64 `json:"lat"`
+}

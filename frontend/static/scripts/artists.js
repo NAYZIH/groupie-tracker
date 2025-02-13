@@ -19,3 +19,13 @@ function searchSuggestions() {
         })
         .catch(error => console.error('Error fetching suggestions:', error));
 }
+
+document.getElementById('search-bar').addEventListener('focus', function() {
+    document.getElementById('suggestions-list').style.display = 'block';
+});
+
+document.getElementById('search-bar').addEventListener('blur', function() {
+    setTimeout(() => {
+        document.getElementById('suggestions-list').style.display = 'none';
+    }, 200);
+});

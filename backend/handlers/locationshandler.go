@@ -63,6 +63,14 @@ func LocationsHandler(w http.ResponseWriter, r *http.Request) {
 	for i, loc := range location.Locations {
 		loc = strings.ReplaceAll(strings.ReplaceAll(loc, "-", ", "), "_", " ")
 		location.Locations[i] = strings.Title(loc)
+
+		lon, lat, err := GetCoordinates(loc)
+		if err != nil {
+			http.Error(w, fmt.Sprintf("Error geocoding location: %v", err), http.StatusInternalServerError)
+			return
+		}
+
+		location.Locations[i] = fmt.Sprintf("%s (X: %.6f, Y: %.6f)", loc, lon, lat)
 	}
 
 	tmpl, err := template.ParseFiles("../frontend/templates/locations.html")

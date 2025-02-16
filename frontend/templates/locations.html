@@ -6,13 +6,23 @@
     <title>Groupie Tracker</title>
     <link rel="stylesheet" href="/static/stylesheets/locations.css">
     <script src="/static/scripts/locations.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="/"><h1>GROUPIE-TRACKER</h1></a>
+    <div class="header-container">
+        <a href="/"><h1>GROUPIE TRACKER</h1></a>
+        <div class="theme-container">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
     <hr>
 
     <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Rechercher un artiste, membre, lieu ou dates" onkeyup="searchSuggestions()">
+        <input type="text" id="search-bar" placeholder="Rechercher des artistes, membres, lieux..." onkeyup="searchSuggestions()">
         <ul id="suggestions-list"></ul>
     </div>
 
